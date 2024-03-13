@@ -11,7 +11,7 @@ func main() {
 	//register the handler for the /computeIncomeDetail endpoint
 	http.HandleFunc("/computeIncomeDetail", ComputeIncomeDetailHandler)
 	//start the server
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":5000", nil)
 }
 
 func ComputeIncomeDetailHandler(w http.ResponseWriter, r *http.Request) {
