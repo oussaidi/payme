@@ -27,7 +27,7 @@ func ComputeIncomeDetail(workedDays int, dailyRate float64, taxRate float64) Inc
 func computeIncomeDetail(grossIncomeByDailyRate GrossIncome, taxRate float64) IncomeDetail {
 	grossIncomeAfterExpenses := int64(math.Round(grossIncomeByDailyRate.TotalGrossIncome * (1 - expenseRatio)))
 	socialTaxAmount := int64(math.Round(float64(grossIncomeAfterExpenses)*socialTaxRate) / 100)
-	incomeTaxAmount := int64(math.Round(float64(grossIncomeAfterExpenses) * defaultIncomeTaxRate / 100))
+	incomeTaxAmount := int64(math.Round(float64(grossIncomeAfterExpenses) * taxRate / 100))
 	netIncome := grossIncomeAfterExpenses - socialTaxAmount - incomeTaxAmount
 
 	return IncomeDetail{grossIncomeByDailyRate.totalDays,

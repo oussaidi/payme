@@ -26,7 +26,6 @@ func ComputeIncomeDetailHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, "Invalid dailyRate", http.StatusBadRequest)
 		return
-
 	}
 	//parse float parameter called taxRate
 	taxRate, err := strconv.ParseFloat(r.URL.Query().Get("taxRate"), 64)
